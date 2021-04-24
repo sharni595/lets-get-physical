@@ -1,24 +1,57 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- <script src="https://www.gstatic.com/charts/loader.js"></script> -->
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Let's Get Physical</title>
 </head>
 <body>
-    
-    <div>
-        <canvas id="fitnessChart" width="400" height="400"></canvas>
-    </div>
+
+    <div id="dynamic-chart"></div>
     <div id="edamam-badge" data-color="white"></div>
+
+
+    <!-- Modal -->
+    <div>
+        <div>
+            <select id="date">
+                <option value="Monday">Monday
+                </option>
+                <option value="Tuesday">Tuesday
+                </option>
+                <option value="Wednesday">Wednesday
+                </option>
+                <option value="Thursday">Thursday
+                </option>
+                <option value="Friday">Friday
+                </option>
+                <option value="Saturday">Saturday
+                </option>
+                <option value="Sunday">Sunday
+                </option>
+            </select>
+        </div>
+        <div>Type of Exercise
+            <select>
+                <option value="Running">Running</option>
+                <option value="Weights">Weights</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Cardio">Cardio</option>
+            </select>
+        </div>
+        <div>Minutes of exercise
+            <input id="minutes"/>
+        </div>
+        <div>Notes
+            <input/>
+        </div>
+        <div><button id="form-button">Submit</button></div>
+    </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
-</html>

@@ -42,22 +42,47 @@ nutritionApi("pear");
 // }
 
 //chart.js playground
+var daysOfWeek = JSON.parse(localStorage.getItem("days")) || {
+    Monday: 0,
+    Tuesday: 0,
+    Wednesday: 0,
+    Thursday: 0,
+    Friday: 0,
+    Saturday: 0,
+    Sunday: 0
+};
 
+function displayChart(arr){
+    $("#dynamic-chart").empty().append(`<canvas id="fitnessChart" width="400" height="400"></canvas>
+    `)
+    //var fitnessChart = document.getElementById("fitnessChart").getContext("2d");
 
+    var barChart = new Chart(fitnessChart, {
+        type: "bar",
+        data:{
+            labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            datasets: [{
+                label: "Minutes of Exercise",
+                data: arr
+            }]
+        },
+        options:{
+            height: 300, 
+            width: 300
+        }
+    });
+};
 
-var fitnessChart = document.getElementById("fitnessChart").getContext("2d");
+$("#form-button").on("click", getUserInput)
 
-var barChart = new Chart(fitnessChart, {
-    type: "bar",
-    data:{
-        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        datasets: [{
-            label: "Minutes of Exercise",
-            data: ["10", "20", "45", "32", "26", "30", "38"]
-        }]
-    },
-    options:{
-        height: 300, 
-        width: 300
-    }
-});
+var newData = {
+    ...daysOfWeek //spread operator
+}
+function getUserInput(event){
+    event.preventDefault();
+    newData[[document.getElementById("date").value]] = parseInt(newData[[document.getElementById("date").value]]) + parseInt(document.getElementById("minutes").value);
+    localStorage.setItem("days", JSON.stringify(newData));
+
+    displayChart(Object.values(newData));
+}
+displayChart(Object.values(daysOfWeek));
