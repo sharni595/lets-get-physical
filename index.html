@@ -3,51 +3,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css" integrity="sha512-RntatPOhEcQEA81gC/esYoCkGkL7AYV7TeTPoU+R9zE44/yWxVvLIBfBSaMu78rhoDd73ZeRHXRJN5+aPEK53Q==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Let's Get Physical</title>
 </head>
-<body>
+<body class="bg-gray-700"></body>
 
-    <div id="dynamic-chart"></div>
-    <div id="edamam-badge" data-color="white"></div>
-
-
-    <!-- Modal -->
-    <div>
-        <div>
-            <select id="date">
-                <option value="Monday">Monday
-                </option>
-                <option value="Tuesday">Tuesday
-                </option>
-                <option value="Wednesday">Wednesday
-                </option>
-                <option value="Thursday">Thursday
-                </option>
-                <option value="Friday">Friday
-                </option>
-                <option value="Saturday">Saturday
-                </option>
-                <option value="Sunday">Sunday
-                </option>
-            </select>
-        </div>
-        <div>Type of Exercise
-            <select>
-                <option value="Running">Running</option>
-                <option value="Weights">Weights</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Cardio">Cardio</option>
-            </select>
-        </div>
-        <div>Minutes of exercise
-            <input id="minutes"/>
-        </div>
-        <div>Notes
-            <input/>
-        </div>
-        <div><button id="form-button">Submit</button></div>
+    
+<div class="flex flex-wrap flex-row h-screen ">
+    <div class=" md:w-1/4 w-screen color bg-purple-500">1</div>
+    <div class=" md:w-3/4 w-full grid grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
+        <div class="rounded-lg  shadow-inner color bg-white">1</div>
+        <div class="rounded-lg  shadow-inner color bg-white">2</div>
+        <div class="rounded-lg  shadow-inner color bg-white">3</div>
+        <div class="rounded-lg  shadow-inner color bg-white">4</div>
+        <div class="rounded-lg  shadow-inner color bg-white">5</div>
+        <div class="rounded-lg  shadow-inner color bg-white">6</div>
     </div>
+</div>
+
+    
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
