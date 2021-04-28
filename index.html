@@ -12,28 +12,36 @@
 
     
 <div class="flex flex-wrap flex-row h-screen ">
-    <div class=" md:w-1/4 w-screen color bg-purple-500">
+    <div class=" md:w-1/4 w-screen color bg-gradient-to-b from-indigo-600 to-purple-500">
     <nav>
-        <h1 class="text-2xl p-5">Let's Get Physical</h1>
+        <h1 class="text-2xl p-5 text-center text-white">Let's Get Physical</h1>
 
     <!--Nav Bar-->
-            <div class="mx-5">
+            <div class="mx-5 inline-block align-middle">
             <ul>
-                <li class="my-1 bg-purple-200 text-center rounded-lg">
-                  <a href="#quick-add-btn">+</a>
-                </li>
-                <li class="my-1 bg-purple-200 text-center rounded-lg">
-                    <a href="#log-history">Log History</a>
-                </li>
-                <li class="my-1 bg-purple-200 text-center rounded-lg"> 
-                    <a href="#track-progress">Track my Progess</a>
-                </li>
+                <button class="my-1 container mx-auto bg-green-200 focus:bg-green-400 text-center rounded-lg hover:drop-shadow-xl">
+                    <li class="px-20">
+                      + New Workout
+                    </li>
+                </button>
+                <button class="my-1 container mx-auto bg-green-200 focus:bg-green-400 text-center rounded-lg hover:drop-shadow-xl">
+                    <li class="px-20">
+                      Log History
+                    </li>
+                </button>
+                <button class="my-1 container mx-auto bg-green-200 focus:bg-green-400 focus:ring-0 text-center rounded-lg hover:drop-shadow-xl">
+                    <li class="px-20">
+                      Track my Progress
+                    </li>
+                </button>
             </ul>
     </div>
 
         <!--Activity Logged Chart-->
         <div class="bg-white opacity-95 rounded-lg m-5" id="dynamic-chart"></div>
+        <div class="m-5">
         <div id="edamam-badge" data-color="white"></div>
+        </div>
     </nav>
 </div>
 
