@@ -11,82 +11,75 @@
 
 
     
-<div class="flex flex-wrap flex-row h-screen ">
-    <div class=" md:w-1/4 w-screen color bg-purple-500"><nav>
-        <h1>Let's Get Physical</h1>
-        <ul>
-            <li>
-                <a href="#quick-add-btn">+</a>
-            </li>
-            <li>
-                <a href="#log-history">Log History</a>
-            </li>
-            <li>
-                <a href="#track-progress">Track my Progess</a>
-            </li>
-        </ul>
-    </nav></div>
-    <div class=" md:w-3/4 w-full grid grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
-        <div class="rounded-lg  shadow-inner color bg-white">1</div>
-        <div class="rounded-lg  shadow-inner color bg-white">2</div>
-        <div class="rounded-lg  shadow-inner color bg-white">3</div>
-        <div class="rounded-lg  shadow-inner color bg-white">4</div>
-        <div class="rounded-lg  shadow-inner color bg-white">5</div>
-        <div class="rounded-lg  shadow-inner color bg-white">6</div>
+<main class="flex flex-wrap flex-row h-screen ">
+    <div class=" md:w-1/4 w-screen color bg-purple-500">
+        <nav>
+            <h1>Let's Get Physical</h1>
+            <ul>
+                <li>
+                    <a href="#quick-add-btn">+</a>
+                </li>
+                <li>
+                    <a href="#log-history">Log History</a>
+                </li>
+                <li>
+                    <a href="#track-progress">Track my Progress</a>
+                </li>
+            </ul>
+        </nav>
+        <div>Overall Chart</div>
+        <div class="bg-green-500 text-center">
+            <h3>Nutrition Info</h3>
+            <p class="text-center">Search food:</p>
+            <input id="food-input">
+            <div>
+                <span id="calories"></span>
+                <span id="protein"></span>
+                <span id="carbs"></span>
+                <span id="fat"></span>
+            </div>
+        </div>
+    </div>
+    <div class=" md:w-3/4 w-full grid grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Chest</h3>
+            <div id="dynamic-chart-chest"></div>
+        </div>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Arms</h3>
+            <div id="dynamic-chart-arms"></div>
+        </div>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Shoulders</h3>
+            <div id="dynamic-chart-shoulders"></div>
+        </div>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Back</h3>
+            <div id="dynamic-chart-back"></div>
+        </div>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Legs</h3>
+            <div id="dynamic-chart-legs"></div>
+        </div>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Abs</h3>
+            <div id="dynamic-chart-abs"></div>
+        </div>
 
-    <!--Nav Bar-->
+    
     
 
-    <div id="dynamic-chart"></div>
-    <div id="edamam-badge" data-color="white"></div>
+    
+    
 
 
-    <!-- Modal -->
-    <div>
-        <div>
-            <h2>Create a New Entry</h2>
-        </div>
-        <div>
-            <select id="date">
-                <option value="Monday">Monday
-                </option>
-                <option value="Tuesday">Tuesday
-                </option>
-                <option value="Wednesday">Wednesday
-                </option>
-                <option value="Thursday">Thursday
-                </option>
-                <option value="Friday">Friday
-                </option>
-                <option value="Saturday">Saturday
-                </option>
-                <option value="Sunday">Sunday
-                </option>
-            </select>
-        </div>
-        <div>Type of Exercise
-            <select>
-                <option value="Running">Running</option>
-                <option value="Weights">Weights</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Cardio">Cardio</option>
-            </select>
-        </div>
-        <div>Minutes of exercise
-            <input id="minutes"/>
-        </div>
-        <div>Notes
-            <input/>
-        </div>
-        <div><button id="form-button">Submit</button></div>
-
-    </div>
-</div>
+    </main>
 
     
 
     <footer>
         <h2>&copy Let's Get Physical 2021</h2>
+        <div id="edamam-badge" data-color="white"></div>
         <href ></href>
     </footer>
 
