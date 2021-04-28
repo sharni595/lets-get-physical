@@ -12,20 +12,31 @@
 
     
 <div class="flex flex-wrap flex-row h-screen ">
-    <div class=" md:w-1/4 w-screen color bg-purple-500"><nav>
-        <h1>Let's Get Physical</h1>
-        <ul>
-            <li>
-                <a href="#quick-add-btn">+</a>
-            </li>
-            <li>
-                <a href="#log-history">Log History</a>
-            </li>
-            <li>
-                <a href="#track-progress">Track my Progess</a>
-            </li>
-        </ul>
-    </nav></div>
+    <div class=" md:w-1/4 w-screen color bg-purple-500">
+    <nav>
+        <h1 class="text-2xl p-5">Let's Get Physical</h1>
+
+    <!--Nav Bar-->
+            <div class="mx-5">
+            <ul>
+                <li class="my-1 bg-purple-200 text-center rounded-lg">
+                  <a href="#quick-add-btn">+</a>
+                </li>
+                <li class="my-1 bg-purple-200 text-center rounded-lg">
+                    <a href="#log-history">Log History</a>
+                </li>
+                <li class="my-1 bg-purple-200 text-center rounded-lg"> 
+                    <a href="#track-progress">Track my Progess</a>
+                </li>
+            </ul>
+    </div>
+
+        <!--Activity Logged Chart-->
+        <div class="bg-white opacity-95 rounded-lg m-5" id="dynamic-chart"></div>
+        <div id="edamam-badge" data-color="white"></div>
+    </nav>
+</div>
+
     <div class=" md:w-3/4 w-full grid grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
         <div class="rounded-lg  shadow-inner color bg-white">1</div>
         <div class="rounded-lg  shadow-inner color bg-white">2</div>
@@ -34,11 +45,7 @@
         <div class="rounded-lg  shadow-inner color bg-white">5</div>
         <div class="rounded-lg  shadow-inner color bg-white">6</div>
 
-    <!--Nav Bar-->
-    
 
-    <div id="dynamic-chart"></div>
-    <div id="edamam-badge" data-color="white"></div>
 
 
     <!-- Modal -->
