@@ -19,10 +19,10 @@ function nutritionApi(food){
             console.log(data.hints[0].food.nutrients.PROCNT)
             console.log(data.hints[0].food.nutrients.CHOCDF);
             console.log(data.hints[0].food.nutrients.FAT);
-            calories.textContent = data.hints[0].food.nutrients.ENERC_KCAL;
-            protein.textContent = data.hints[0].food.nutrients.PROCNT;
-            carbs.textContent =  data.hints[0].food.nutrients.CHOCDF;
-            fat.textContent = data.hints[0].food.nutrients.FAT;
+            calories.textContent = data.hints[0].food.nutrients.ENERC_KCAL.toFixed(2);
+            protein.textContent = data.hints[0].food.nutrients.PROCNT.toFixed(2);
+            carbs.textContent =  data.hints[0].food.nutrients.CHOCDF.toFixed(2);
+            fat.textContent = data.hints[0].food.nutrients.FAT.toFixed(2);
         })
     
 }
