@@ -7,26 +7,42 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Let's Get Physical</title>
 </head>
+
 <body class="bg-gray-700">
     
 <main class="flex flex-wrap flex-row h-screen">
-    <div class=" md:w-1/4 w-screen color bg-purple-500">
-        <nav>
-            <h1>Let's Get Physical</h1>
+     
+        <!-- footer? -->
+        <footer class="mb-0">
+            <h2>&copy Let's Get Physical 2021</h2>
+            <div id="edamam-badge" data-color="white"></div>
+        </footer>
+    
+<div class="flex flex-wrap flex-row h-screen ">
+    <div class=" md:w-1/4 w-screen color bg-gradient-to-b from-indigo-600 to-purple-500">
+    <nav>
+        <h1 class="text-2xl p-5 text-center text-white">Let's Get Physical</h1>
+
+    <!--Nav Bar-->
+            <div class="mx-5 inline-block align-middle">
             <ul>
-                <li>
-                    <a href="#quick-add-btn">+</a>
-                </li>
-                <li>
-                    <a href="#log-history">Log History</a>
-                </li>
-                <li>
-                    <a href="#track-progress">Track my Progress</a>
-                </li>
+                <button class="my-1 container mx-auto bg-green-200 focus:bg-green-400 text-center rounded-lg hover:drop-shadow-xl">
+                    <li class="px-20">
+                      + New Workout
+                    </li>
+                </button>
+                <button class="my-1 container mx-auto bg-green-200 focus:bg-green-400 text-center rounded-lg hover:drop-shadow-xl">
+                    <li class="px-20">
+                      Log History
+                    </li>
+                </button>
+                <button class="my-1 container mx-auto bg-green-200 focus:bg-green-400 focus:ring-0 text-center rounded-lg hover:drop-shadow-xl">
+                    <li class="px-20">
+                      Track my Progress
+                    </li>
+                </button>
             </ul>
-        </nav>
-        <!-- general overview chart -->
-        <div>Overall Chart</div>
+                 <div>Overall Chart</div>
         <!-- nutrition div -->
         <div class="bg-green-200 text-center m-2 rounded-lg">
             <h3 class="font-bold text-lg py-3">Nutrition Information</h3>
@@ -41,13 +57,16 @@
                 <p>Fat: <span id="fat"></span></p>
             </div>
         </div>
-        <!-- footer? -->
-        <footer class="mb-0">
-            <h2>&copy Let's Get Physical 2021</h2>
-            <div id="edamam-badge" data-color="white"></div>
-        </footer>
     </div>
-    <div class=" md:w-3/4 w-full grid grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
+
+        <!--Activity Logged Chart-->
+        <div class="m-5">
+        <div id="edamam-badge" data-color="white"></div>
+        </div>
+    </nav>
+</div>
+
+        <div class=" md:w-3/4 w-full grid grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
         <div class="rounded-lg shadow-inner color bg-white">
             <h3>Chest</h3>
             <div id="dynamic-chart-chest"></div>
