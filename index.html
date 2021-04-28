@@ -43,12 +43,13 @@
 
 
     <!-- Modal -->
-    <div>
-        <div>
+    <div class="border-black border-2 rounded-lg bg-blue-200">
+        <div class="my-3 mx-2">
             <h2>Create a New Entry</h2>
         </div>
-        <div>
-            <select id="date">
+
+        <div class="my-3 mx-2">
+            <select id="date" class="rounded-lg p-1">
                 <option value="Monday">Monday
                 </option>
                 <option value="Tuesday">Tuesday
@@ -65,23 +66,27 @@
                 </option>
             </select>
         </div>
-        <div>Type of Exercise
-            <select>
+
+        <div class="my-3 mx-2">Type of Exercise:
+            <select class="rounded-lg p-1">
                 <option value="Running">Running</option>
                 <option value="Weights">Weights</option>
                 <option value="Yoga">Yoga</option>
                 <option value="Cardio">Cardio</option>
             </select>
         </div>
-        <div>Minutes of exercise
-            <input id="minutes"/>
-        </div>
-        <div>Notes
-            <input/>
-        </div>
-        <div><button id="form-button">Submit</button></div>
 
-    </div>
+        <div class="my-3 mx-2">Minutes of exercise:
+            <input id="minutes" class="rounded-lg p-1 w-10"/>
+        </div>
+
+        <div class="my-3 mx-2">Notes
+            <input class="rounded-lg p-1"/>
+        </div>
+
+        <div class="my-6 mx-2">
+            <button id="form-button" class="bg-green-300 py-2 px-3 rounded-lg">Submit</button></div>
+        </div>
 </div>
 
     
