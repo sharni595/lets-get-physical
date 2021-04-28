@@ -1,4 +1,11 @@
 
+var calories = document.getElementById("calories");
+var protein = document.getElementById("protein");
+var carbs = document.getElementById("carbs");
+var fat = document.getElementById("fat");
+var nutritionInput = document.getElementById("nutrition-input");
+var nutritionSearch = document.getElementById("nutrition-search");
+
 //nutrition api set up
 function nutritionApi(food){
     var apiUrl = "https://api.edamam.com/api/food-database/v2/parser?app_id=f6bcb10b&app_key=f433e474ba7ce9d3e2329315b7ff8586&ingr=" + food;
@@ -9,14 +16,22 @@ function nutritionApi(food){
         }).then(function(data){
             console.log(data);
             console.log(data.hints[0].food.nutrients.ENERC_KCAL);
-            console.log(data.hints[0].food.nutrients.PROCNT);
+            console.log(data.hints[0].food.nutrients.PROCNT)
             console.log(data.hints[0].food.nutrients.CHOCDF);
             console.log(data.hints[0].food.nutrients.FAT);
+            calories.textContent = data.hints[0].food.nutrients.ENERC_KCAL;
+            protein.textContent = data.hints[0].food.nutrients.PROCNT;
+            carbs.textContent =  data.hints[0].food.nutrients.CHOCDF;
+            fat.textContent = data.hints[0].food.nutrients.FAT;
         })
     
 }
 
-nutritionApi("pear");
+
+nutritionSearch.addEventListener("click", function(){
+    nutritionApi(nutritionInput.value);
+});
+
 
 
 //chart.js chest tracking chart

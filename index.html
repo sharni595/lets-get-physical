@@ -7,11 +7,9 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Let's Get Physical</title>
 </head>
-<body class="bg-gray-700"></body>
-
-
+<body class="bg-gray-700">
     
-<main class="flex flex-wrap flex-row h-screen ">
+<main class="flex flex-wrap flex-row h-screen">
     <div class=" md:w-1/4 w-screen color bg-purple-500">
         <nav>
             <h1>Let's Get Physical</h1>
@@ -27,18 +25,27 @@
                 </li>
             </ul>
         </nav>
+        <!-- general overview chart -->
         <div>Overall Chart</div>
-        <div class="bg-green-500 text-center">
-            <h3>Nutrition Info</h3>
-            <p class="text-center">Search food:</p>
-            <input id="food-input">
+        <!-- nutrition div -->
+        <div class="bg-green-200 text-center m-2 rounded-lg">
+            <h3 class="font-bold text-lg py-3">Nutrition Information</h3>
+                <div class="justify-center">
+                    <input id="nutrition-input" class="mb-4 rounded-md p-1" id="food-input" placeholder="Search Food"/>
+                    <button id="nutrition-search" class="p-1 bg-green-300 rounded-md hover:bg-green-400">Search</button>
+                </div>
             <div>
-                <span id="calories"></span>
-                <span id="protein"></span>
-                <span id="carbs"></span>
-                <span id="fat"></span>
+                <p>Calories: <span id="calories"></span></p>
+                <p>Protein: <span id="protein"></span></p>
+                <p>Carbs: <span id="carbs"></span></p>
+                <p>Fat: <span id="fat"></span></p>
             </div>
         </div>
+        <!-- footer? -->
+        <footer class="mb-0">
+            <h2>&copy Let's Get Physical 2021</h2>
+            <div id="edamam-badge" data-color="white"></div>
+        </footer>
     </div>
     <div class=" md:w-3/4 w-full grid grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
         <div class="rounded-lg shadow-inner color bg-white">
@@ -67,24 +74,16 @@
         </div>
 
     
-    
-
-    
-    
-
 
     </main>
-
     
-
-    <footer>
-        <h2>&copy Let's Get Physical 2021</h2>
-        <div id="edamam-badge" data-color="white"></div>
-        <href ></href>
-    </footer>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
+
+</html>
