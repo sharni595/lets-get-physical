@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Let's Get Physical</title>
 </head>
-<body class="bg-gray-700"></body>
 
-
+<body class="bg-gray-700">
+    
+<main class="flex flex-wrap flex-row h-screen">
+    
     
 <div class="flex flex-wrap flex-row h-screen ">
     <div class=" md:w-1/4 w-screen color bg-gradient-to-b from-indigo-600 to-purple-500">
@@ -21,83 +23,72 @@
                 <button class="bg-gradient-to-br from-green-200 to-green-600 hover:bg-blue-500 text-center rounded-lg px-10">
                       <p>+ New Workout</p>
                 </button>
+            
+                 <div>Overall Chart</div>
+        <!-- nutrition div -->
+        <div class="bg-green-200 text-center m-2 rounded-lg">
+            <h3 class="font-bold text-lg py-3">Nutrition Information</h3>
+                <div class="justify-center">
+                    <input id="nutrition-input" class="mb-4 rounded-md p-1" id="food-input" placeholder="Search Food"/>
+                    <button id="nutrition-search" class="p-1 bg-green-300 rounded-md hover:bg-green-400">Search</button>
+                </div>
+            <div>
+                <p>Calories: <span id="calories"></span></p>
+                <p>Protein: <span id="protein"></span></p>
+                <p>Carbs: <span id="carbs"></span></p>
+                <p>Fat: <span id="fat"></span></p>
+            </div>
         </div>
+    </div>
 
         <!--Activity Logged Chart-->
-        <div class="flex flex-wrap justify-center w-11/12 bg-white opacity-95 rounded-lg mx-auto mt-5" id="dynamic-chart"></div>
         <div class="m-5">
         <div id="edamam-badge" data-color="white"></div>
         </div>
     </nav>
 </div>
 
-    <div class=" md:w-3/4 w-full grid grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
-        <div class="rounded-lg  shadow-inner color bg-white">1</div>
-        <div class="rounded-lg  shadow-inner color bg-white">2</div>
-        <div class="rounded-lg  shadow-inner color bg-white">3</div>
-        <div class="rounded-lg  shadow-inner color bg-white">4</div>
-        <div class="rounded-lg  shadow-inner color bg-white">5</div>
-        <div class="rounded-lg  shadow-inner color bg-white">6</div>
-
-
-
-
-    <!-- Modal -->
-    <div class="border-black border-2 rounded-lg bg-blue-200">
-        <div class="my-3 mx-2">
-            <h2>Create a New Entry</h2>
+        <div class=" md:w-3/4 w-full grid grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Chest</h3>
+            <div id="dynamic-chart-chest"></div>
         </div>
-
-        <div class="my-3 mx-2">
-            <select id="date" class="rounded-lg p-1">
-                <option value="Monday">Monday
-                </option>
-                <option value="Tuesday">Tuesday
-                </option>
-                <option value="Wednesday">Wednesday
-                </option>
-                <option value="Thursday">Thursday
-                </option>
-                <option value="Friday">Friday
-                </option>
-                <option value="Saturday">Saturday
-                </option>
-                <option value="Sunday">Sunday
-                </option>
-            </select>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Arms</h3>
+            <div id="dynamic-chart-arms"></div>
         </div>
-
-        <div class="my-3 mx-2">Type of Exercise:
-            <select class="rounded-lg p-1">
-                <option value="Running">Running</option>
-                <option value="Weights">Weights</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Cardio">Cardio</option>
-            </select>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Shoulders</h3>
+            <div id="dynamic-chart-shoulders"></div>
         </div>
-
-        <div class="my-3 mx-2">Minutes of exercise:
-            <input id="minutes" class="rounded-lg p-1 w-10"/>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Back</h3>
+            <div id="dynamic-chart-back"></div>
         </div>
-
-        <div class="my-3 mx-2">Notes
-            <input class="rounded-lg p-1"/>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Legs</h3>
+            <div id="dynamic-chart-legs"></div>
         </div>
-
-        <div class="my-6 mx-2">
-            <button id="form-button" class="bg-green-300 py-2 px-3 rounded-lg">Submit</button></div>
+        <div class="rounded-lg shadow-inner color bg-white">
+            <h3>Abs</h3>
+            <div id="dynamic-chart-abs"></div>
         </div>
-</div>
 
     
 
-    <footer>
-        <h2>&copy Let's Get Physical 2021</h2>
-        <href ></href>
-    </footer>
+    </main>
+    
+            <!-- footer? -->
+            <footer class="mb-0">
+                <h2>&copy Let's Get Physical 2021</h2>
+                <div id="edamam-badge" data-color="white"></div>
+            </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
+
+</html>
