@@ -12,24 +12,25 @@
     
 <main class="flex flex-wrap flex-row h-screen">
      
-       
+        <!-- footer? -->
+        <footer class="mb-0">
+            <h2>&copy Let's Get Physical 2021</h2>
+            <div id="edamam-badge" data-color="white"></div>
+        </footer>
     
 <div class="flex flex-wrap flex-row h-screen ">
     <div class=" md:w-1/4 w-screen color bg-gradient-to-b from-indigo-600 to-purple-500">
-    <nav class="content-center">
-        <h1 class="text-2xl pt-5 pb-3 text-center text-white">Let's Get Physical</h1>
+    <nav>
+        <h1 class="text-2xl p-5 text-center text-white">Let's Get Physical</h1>
 
     <!--Nav Bar-->
-        <div class="flex flex-wrap justify-center w-1/3 mx-auto">
-                <button class="bg-gradient-to-br from-green-200 to-green-600 hover:bg-blue-500 text-center rounded-lg px-10">
-                      <p>+ New Workout</p>
+            <div class="mx-5 inline-block align-middle">
+            <ul>
+                <button class="my-1 container mx-auto bg-green-200 focus:bg-green-400 text-center rounded-lg hover:drop-shadow-xl">
+                    <li class="px-20">
+                      + New Workout
+                    </li>
                 </button>
-
-        </div>
-
-        <!--Activity Logged Chart-->
-        <div class="flex flex-wrap justify-center w-11/12 bg-white opacity-95 rounded-lg mx-auto mt-5" id="dynamic-chart"></div>
-
                 <button class="my-1 container mx-auto bg-green-200 focus:bg-green-400 text-center rounded-lg hover:drop-shadow-xl">
                     <li class="px-20">
                       Log History
@@ -58,61 +59,11 @@
         </div>
     </div>
 
-        
+        <!--Activity Logged Chart-->
         <div class="m-5">
         <div id="edamam-badge" data-color="white"></div>
         </div>
     </nav>
-</div>
-
-
- 
-
-    <!-- Modal -->
-    <div class="border-black border-2 rounded-lg bg-blue-200">
-        <div class="my-3 mx-2">
-            <h2>Create a New Entry</h2>
-        </div>
-
-        <div class="my-3 mx-2">
-            <select id="date" class="rounded-lg p-1">
-                <option value="Monday">Monday
-                </option>
-                <option value="Tuesday">Tuesday
-                </option>
-                <option value="Wednesday">Wednesday
-                </option>
-                <option value="Thursday">Thursday
-                </option>
-                <option value="Friday">Friday
-                </option>
-                <option value="Saturday">Saturday
-                </option>
-                <option value="Sunday">Sunday
-                </option>
-            </select>
-        </div>
-
-        <div class="my-3 mx-2">Type of Exercise:
-            <select class="rounded-lg p-1">
-                <option value="Running">Running</option>
-                <option value="Weights">Weights</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Cardio">Cardio</option>
-            </select>
-        </div>
-
-        <div class="my-3 mx-2">Minutes of exercise:
-            <input id="minutes" class="rounded-lg p-1 w-10"/>
-        </div>
-
-        <div class="my-3 mx-2">Notes
-            <input class="rounded-lg p-1"/>
-        </div>
-
-        <div class="my-6 mx-2">
-            <button id="form-button" class="bg-green-300 py-2 px-3 rounded-lg">Submit</button></div>
-        </div>
 </div>
 
         <div class=" md:w-3/4 w-full grid grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
@@ -140,7 +91,6 @@
             <h3>Abs</h3>
             <div id="dynamic-chart-abs"></div>
         </div>
-
 
     
 
