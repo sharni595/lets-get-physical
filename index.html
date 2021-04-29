@@ -73,16 +73,46 @@
 <!-- END right hand chart section -->
 
 <!--Footer-->
-<footer class="flex flex-row">
-    <div>
-        <!--Make copyright center inline with edamam center-->
-        <p class="m-3 justify-center">Let's Get Physical 2021</p>
-    </div>
-    <div id="edamam-badge" data-color="white" class="m-3">
-    </div>
-</footer>
+        <footer class="flex flex-row">
+            <div>
+                <!--Make copyright center inline with edamam center-->
+                <p class="m-3 justify-center">Let's Get Physical 2021</p>
+            </div>
+            <div id="edamam-badge" data-color="white" class="m-3">
+            </div>
+        </footer>
     </main>
-    
+    <div class='modal modal-active' id='input-modal'>
+        <div class="modal-body color bg-blue-200 rounded font-bold py-2 px-4">
+            <div>
+                <select id="date">
+                    <option value="Week1">Week 1</option>
+                    <option value="Week2">Week 2</option>
+                    <option value="Week3">Week 3</option>
+                    <option value="Week4">Week 4</option>
+                    <option value="Week5">Week 5</option>
+                    <option value="Week6">Week 6</option>
+                </select>
+            </div>
+            <div>Type of Exercise
+                <select>
+                    <option value="Chest">Chest</option>
+                    <option value="Arms">Arms</option>
+                    <option value="Shoulders">Shoulders</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                    <option value="Abs">Abs</option>
+                </select>
+            </div>
+            <div>
+                Minutes of exercise<input id="pounds"/>
+            </div>
+            <div>
+                Notes<input/>
+            </div>
+            <button class="color bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded" id="form-button">Submit</button>
+        </div>
+    </div>
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
