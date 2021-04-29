@@ -5,6 +5,7 @@ var carbs = document.getElementById("carbs");
 var fat = document.getElementById("fat");
 var nutritionInput = document.getElementById("nutrition-input");
 var nutritionSearch = document.getElementById("nutrition-search");
+var bodyFocus = document.getElementById("body-focus").selectedIndex;
 
 //nutrition api set up
 function nutritionApi(food){
@@ -45,7 +46,7 @@ var daysOfWeek = JSON.parse(localStorage.getItem("days")) || {
 };
 
 function displayChart(arr){
-    $("#dynamic-chart-chest").empty().append(`<canvas id="fitnessChart" width="400" height="400"></canvas>
+    $(`#dynamic-chart-chest`).empty().append(`<canvas id="fitnessChart" width="400" height="400"></canvas>
     `)
     //var fitnessChart = document.getElementById("fitnessChart").getContext("2d");
 
@@ -55,7 +56,15 @@ function displayChart(arr){
             labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6"],
             datasets: [{
                 label: "Weight Lifted",
-                data: arr
+                data: arr,
+                backgroundColor: [
+                    "#ffe66d",
+                    "#ff6b6b",
+                    "#4ecdc4",
+                    "#577590",
+                    "#cbc0d3",
+                    "#ffbf69"
+                ]
             }]
         },
         options:{
