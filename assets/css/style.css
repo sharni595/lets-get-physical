@@ -1,5 +1,5 @@
 .modal {
-    display:none;
+    visibility: hidden;
     position:fixed;
     background-color: rgba(0,0,0,.5);
     top:0%;
@@ -10,14 +10,19 @@
 }
 .modal-body {
     margin:auto;
-    margin-top: 10%;
+    margin-top: 10vh;
     align-items: center;
     justify-content: center;
-    max-height:80%;
+    max-height:80vh;
     width: 33%;
+    transform: translateY(-100vh);
+    transition: transform .5s;
 }
 .modal-active {
-    display:block;
+    visibility: visible;
+}
+.modal-active .modal-body{
+    transform: translateY(0);
 }
 .modal-exit {
     position:relative;
