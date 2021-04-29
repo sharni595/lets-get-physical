@@ -1,0 +1,21 @@
+.modal {
+    display:none;
+    position:fixed;
+    background-color: rgba(0,0,0,.5);
+    top:0%;
+    left:0%;
+    height:100%;
+    width:100%;
+    z-index:100;
+}
+.modal-body {
+    margin:auto;
+    margin-top: 10%;
+    align-items: center;
+    justify-content: center;
+    max-height:80%;
+    width: 33%;
+}
+.modal-active {
+    display:block;
+}
