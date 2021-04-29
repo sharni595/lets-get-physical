@@ -19,3 +19,18 @@
 .modal-active {
     display:block;
 }
+.modal-exit {
+    position:relative;
+    right:calc(-100% + 1em);
+    width: 1.5em;
+    height: 1.5em;
+    background-color:red;
+    border-radius: .25rem;
+    border:black;
+}
+.modal-exit::before{
+    height:100%;
+    display:block;
+    content: ' ';
+    background-image: url('/assets/svg/close-icon.svg');
+}
