@@ -3,30 +3,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css" integrity="sha512-RntatPOhEcQEA81gC/esYoCkGkL7AYV7TeTPoU+R9zE44/yWxVvLIBfBSaMu78rhoDd73ZeRHXRJN5+aPEK53Q==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.2/tailwind.min.css" integrity="sha512-RntatPOhEcQEA81gC/esYoCkGkL7AYV7TeTPoU+R9zE44/yWxVvLIBfBSaMu78rhoDd73ZeRHXRJN5+aPEK53Q==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css"/>   
+    <link rel="stylesheet" href="https://use.typekit.net/wfs8ufu.css">
     <title>Let's Get Physical</title>
 </head>
-<body class="bg-gray-700"></body>
 
+<body>
     
-<div class="flex flex-wrap flex-row h-screen ">
-    <div class=" md:w-1/4 w-screen color bg-purple-500">1</div>
-    <div class=" md:w-3/4 w-full grid grid-cols-3 gap-6 grid-flow-row color bg-blue-100 p-8 ">
-        <div class="rounded-lg  shadow-inner color bg-white">1</div>
-        <div class="rounded-lg  shadow-inner color bg-white">2</div>
-        <div class="rounded-lg  shadow-inner color bg-white">3</div>
-        <div class="rounded-lg  shadow-inner color bg-white">4</div>
-        <div class="rounded-lg  shadow-inner color bg-white">5</div>
-        <div class="rounded-lg  shadow-inner color bg-white">6</div>
+    <main class="flex flex-wrap flex-row h-screen">
+
+<!--START left hand menu desktop/top menu mobile-->
+        <div id="wrapper" class="shadow flex flex-wrap flex-row sm:h-1/4 mmd:h-screen md:w-1/4">
+            <nav class="w-screen content-center">
+                <h1 class="pt-5 pb-6 text-center text-white">Let's Get Physical</h1>
+
+            <!--Nav Bar-->
+                <div class="flex flex-wrap justify-center w-3/4 mx-auto pb-6">
+                        <button tyoe="button" id="add-new" class="shadow text-center rounded-lg">+ New Workout</button>
+                </div>        
+                <div class="pb-6">Overall Chart</div>
+            <!-- nutrition info search-->
+                    <div id="nutrition-container" class="bg-green-200 text-center mx-auto pb-6 rounded-lg">
+                        <h3 class="font-bold text-lg py-3 pb-1">Nutrition Information</h3>
+                            <div class="justify-center">
+                                <input id="nutrition-input" class=" shadow-inner rounded-md p-1" id="food-input" placeholder="Search Food"/>
+                                <button id="nutrition-search" class="p-1 m-3 bg-green-300 rounded-md hover:bg-green-400">Search</button>
+                            </div>
+                        <div>
+                            <p>Calories: <span id="calories"></span></p>
+                            <p>Protein: <span id="protein"></span></p>
+                            <p>Carbs: <span id="carbs"></span></p>
+                            <p>Fat: <span id="fat"></span></p>
+                        </div>
+                    </div>
+    
+                <!-- Workout input questionnaire -->
+                <!-- <div class="m-2 color bg-blue-200 rounded font-bold py-2 px-4">
+                    <div>Week:
+                        <select id="date" class="rounded-sm my-2">
+                            <option value="Week1">Week 1
+                            </option>
+                            <option value="Week2">Week 2
+                            </option>
+                            <option value="Week3">Week 3
+                            </option>
+                            <option value="Week4">Week 4
+                            </option>
+                            <option value="Week5">Week 5
+                            </option>
+                            <option value="Week6">Week 6
+                            </option>
+                        </select>
+                    </div>
+                    <div>Type of Exercise:
+                        <select class="rounded-sm w-20 my-2" id="body-focus">
+                            <option value="Chest">Chest</option>
+                            <option value="Arms">Arms</option>
+                            <option value="Shoulders">Shoulders</option>
+                            <option value="Back">Back</option>
+                            <option value="Legs">Legs</option>
+                            <option value="Abs">Abs</option>
+                        </select>
+                    </div>
+                    <div>
+                        Weight lifted: <input class="w-10 my-2 rounded-sm" id="pounds"/>
+                    </div>
+                    <button class="my-3 color bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded" id="form-button">Submit</button>
+                </div> -->
+            </nav>
+        </div>
+<!--END left hand menu desktop/top menu mobile-->
+
+<!-- START right hand chart section -->
+
+        <div id="main-wrapper" class=" md:w-3/4 grid auto-rows-max  lg:grid-cols-3  grid-cols-2  gap-6 p-8 ">
+        <div id="chart-container" class=" rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
+            <h3>Chest</h3>
+            <div id="dynamic-chart-chest"></div>
+        </div>
+        <div id="chart-container" class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
+            <h3>Arms</h3>
+            <div id="dynamic-chart-chest"></div>
+        </div>
+        <div id="chart-container" class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
+            <h3>Shoulders</h3>
+            <div id="dynamic-chart-shoulders"></div>
+        </div>
+        <div id="chart-container" class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
+            <h3>Back</h3>
+            <div id="dynamic-chart-back"></div>
+        </div>
+        <div id="chart-container" class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
+            <h3>Legs</h3>
+            <div id="dynamic-chart-legs"></div>
+        </div>
+        <div id="chart-container" class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
+            <h3>Abs</h3>
+            <div id="dynamic-chart-abs"></div>
+        </div>
+        </div>
+
+<!-- END right hand chart section -->
+
+<!--Footer-->
+<footer class="flex flex-row">
+    <div>
+        <!--Make copyright center inline with edamam center-->
+        <p class="m-3 justify-center">Let's Get Physical 2021</p>
     </div>
-</div>
-
+    <div id="edamam-badge" data-color="white" class="m-3">
+    </div>
+</footer>
+    </main>
     
-
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
+
+</html>
