@@ -7,7 +7,6 @@ var nutritionInput = document.getElementById("nutrition-input");
 var nutritionSearch = document.getElementById("nutrition-search");
 var bodyFocus = document.getElementById("body-focus").selectedIndex;
 
-
 //nutrition api set up
 function nutritionApi(food){
     var apiUrl = "https://api.edamam.com/api/food-database/v2/parser?app_id=f6bcb10b&app_key=f433e474ba7ce9d3e2329315b7ff8586&ingr=" + food;
@@ -47,8 +46,8 @@ var daysOfWeek = JSON.parse(localStorage.getItem("days")) || {
 };
 
 function displayChart(arr){
-    $(`#dynamic-chart-chest`).empty().append(`<canvas id="fitnessChart" width="400" height="400"></canvas>
-
+    //how to make this function more dynamic??target #dynamic-chart-data id
+    $(`#dynamic-chart-${bodyFocus}`).empty().append(`<canvas id="fitnessChart" width="400" height="400"></canvas>
     `)
     //var fitnessChart = document.getElementById("fitnessChart").getContext("2d");
 
@@ -67,7 +66,6 @@ function displayChart(arr){
                     "#cbc0d3",
                     "#ffbf69"
                 ]
-
             }]
         },
         options:{
