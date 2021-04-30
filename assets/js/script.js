@@ -7,6 +7,25 @@ var nutritionInput = document.getElementById("nutrition-input");
 var nutritionSearch = document.getElementById("nutrition-search");
 var bodyFocus = document.getElementById("body-focus").selectedIndex;
 
+//chart.js chest tracking chart
+var workoutData = JSON.parse(localStorage.getItem("workoutData")) || {
+    chest: [0,0,0,0,0,0],
+    arms: [0,0,0,0,0,0],
+    shoulders: [0,0,0,0,0,0],
+    back: [0,0,0,0,0,0],
+    legs: [0,0,0,0,0,0],
+    abs: [0,0,0,0,0,0]
+}
+//Basically useless but might be useful later
+var chartArray = {
+    chest: {},
+    arms: {},
+    shoulders: {},
+    back: {},
+    legs: {},
+    abs: {}
+}
+
 //nutrition api set up
 function nutritionApi(food){
     var apiUrl = "https://api.edamam.com/api/food-database/v2/parser?app_id=f6bcb10b&app_key=f433e474ba7ce9d3e2329315b7ff8586&ingr=" + food;
@@ -33,58 +52,49 @@ nutritionSearch.addEventListener("click", function(){
     nutritionApi(nutritionInput.value);
 });
 
-
-
-//chart.js chest tracking chart
-var daysOfWeek = JSON.parse(localStorage.getItem("days")) || {
-    Week1: 0,
-    Week2: 0,
-    Week3: 0,
-    Week4: 0,
-    Week5: 0,
-    Week6: 0
-};
-
-function displayChart(arr){
-    //how to make this function more dynamic??target #dynamic-chart-data id
-    $(`#dynamic-chart-${bodyFocus}`).empty().append(`<canvas id="fitnessChart" width="400" height="400"></canvas>
-    `)
-    //var fitnessChart = document.getElementById("fitnessChart").getContext("2d");
-
-    var barChart = new Chart(fitnessChart, {
-        type: "polarArea",
-        data:{
-            labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6"],
-            datasets: [{
-                label: "Weight Lifted",
-                data: arr,
-                backgroundColor: [
-                    "#ffe66d",
-                    "#ff6b6b",
-                    "#4ecdc4",
-                    "#577590",
-                    "#cbc0d3",
-                    "#ffbf69"
-                ]
-            }]
-        },
-        options:{
-            height: 300, 
-            width: 300
-        }
+function renderCharts(){
+    $(`.chart-target`).empty().append(`<canvas width="400" height="400"></canvas>`);
+    $(`.chart-target`).each((index,element)=>{
+        var canvas = $(element).find('canvas')[0];
+        var id = element.id;
+        var bodyPart = id.substring(14);
+        chartArray[bodyPart] = new Chart(canvas, {
+            type: "polarArea",
+            data:{
+                labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6"],
+                datasets: [{
+                    label: "Weight Lifted",
+                    data: workoutData[bodyPart],
+                    backgroundColor: [
+                        "#ffe66d",
+                        "#ff6b6b",
+                        "#4ecdc4",
+                        "#577590",
+                        "#cbc0d3",
+                        "#ffbf69"
+                    ]
+                }]
+            },
+            options:{
+                height: 300, 
+                width: 300
+            }
+        });
     });
 };
 
-$("#form-button").on("click", getUserInput)
+$("#form-button").on("click", getUserInput);
 
-var newData = {
-    ...daysOfWeek //spread operator
-}
 function getUserInput(event){
     event.preventDefault();
-    newData[[document.getElementById("date").value]] = parseInt(newData[[document.getElementById("date").value]]) + parseInt(document.getElementById("pounds").value);
-    localStorage.setItem("weeks", JSON.stringify(newData));
+    var bodyPart = $('#body-focus').val();
+    var weekIndex = parseInt($('#date').val());
+    var poundsInput = $('#pounds').val();
 
-    displayChart(Object.values(newData));
+    workoutData[bodyPart][weekIndex] = poundsInput;
+    
+    localStorage.setItem("workoutData", JSON.stringify(workoutData));
+    renderCharts();
 }
-displayChart(Object.values(daysOfWeek));
+
+renderCharts();
