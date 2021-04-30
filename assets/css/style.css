@@ -1,0 +1,41 @@
+.modal {
+    visibility: hidden;
+    position:fixed;
+    background-color: rgba(0,0,0,.5);
+    top:0%;
+    left:0%;
+    height:100%;
+    width:100%;
+    z-index:100;
+}
+.modal-body {
+    margin:auto;
+    margin-top: 10vh;
+    align-items: center;
+    justify-content: center;
+    max-height:80vh;
+    width: 33%;
+    transform: translateY(-100vh);
+    transition: transform .5s;
+}
+.modal-active {
+    visibility: visible;
+}
+.modal-active .modal-body{
+    transform: translateY(0);
+}
+.modal-exit {
+    position:relative;
+    right:calc(-100% + 1em);
+    width: 1.5em;
+    height: 1.5em;
+    background-color:red;
+    border-radius: .25rem;
+    border:black;
+}
+.modal-exit::before{
+    height:100%;
+    display:block;
+    content: ' ';
+    background-image: url('/assets/svg/close-icon.svg');
+}
