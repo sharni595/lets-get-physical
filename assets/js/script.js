@@ -47,7 +47,7 @@ var daysOfWeek = JSON.parse(localStorage.getItem("days")) || {
 
 function displayChart(arr){
     //how to make this function more dynamic??target #dynamic-chart-data id
-    $(`#dynamic-chart-chest`).empty().append(`<canvas id="fitnessChart" width="400" height="400"></canvas>
+    $(`#dynamic-chart-${bodyFocus}`).empty().append(`<canvas id="fitnessChart" width="400" height="400"></canvas>
     `)
     //var fitnessChart = document.getElementById("fitnessChart").getContext("2d");
 

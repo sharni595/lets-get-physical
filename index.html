@@ -19,12 +19,11 @@
             <nav class="w-screen content-center">
                 <h1 class="pt-5 pb-6 text-center text-white">Let's Get Physical</h1>
 
-            <!--Nav Bar-->
+                <!--Nav Bar-->
                 <div class="flex flex-wrap justify-center w-3/4 mx-auto pb-6">
-                        <button type="button" id="add-new" class="shadow text-center rounded-lg">+ New Workout</button>
+                        <button type="button" id="add-new" class="shadow text-center rounded-lg" onClick="openModal('input-modal')">+ New Workout</button>
                 </div>        
-                <div class="pb-6">Overall Chart</div>
-            <!-- nutrition info search-->
+                <!-- nutrition info search-->
                     <div id="nutrition-container" class="bg-green-200 text-center mx-auto pb-6 rounded-lg">
                         <h3 class="font-bold text-lg py-3 pb-1">Nutrition Information</h3>
                             <div class="justify-center">
@@ -38,7 +37,6 @@
                             <p>Fat: <span id="fat"></span></p>
                         </div>
                     </div>
-                </div>
             </nav>
         </div>
 <!--END left hand menu desktop/top menu mobile-->
@@ -88,7 +86,7 @@
     </main>
     <div class='modal modal-active' id='input-modal'>
         <div class="modal-body color bg-blue-200 rounded font-bold py-2 px-4">
-            <div>
+            <div>Week: 
                 <select id="date">
                     <option value="Week1">Week 1</option>
                     <option value="Week2">Week 2</option>
@@ -98,8 +96,8 @@
                     <option value="Week6">Week 6</option>
                 </select>
             </div>
-            <div>Type of Exercise
-                <select>
+            <div>Type of Exercise:
+                <select id="body-focus">
                     <option value="Chest">Chest</option>
                     <option value="Arms">Arms</option>
                     <option value="Shoulders">Shoulders</option>
@@ -109,10 +107,7 @@
                 </select>
             </div>
             <div>
-                Minutes of exercise<input id="pounds"/>
-            </div>
-            <div>
-                Notes<input/>
+                Weight lifted: <input id="pounds"/>lbs
             </div>
             <button class="color bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded" id="form-button">Submit</button>
         </div>
