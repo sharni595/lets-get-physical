@@ -3,11 +3,6 @@ var calories = document.getElementById("calories");
 var protein = document.getElementById("protein");
 var carbs = document.getElementById("carbs");
 var fat = document.getElementById("fat");
-var nutritionInput = document.getElementById("nutrition-input");
-var nutritionSearch = document.getElementById("nutrition-search");
-var bodyFocus = document.getElementById("body-focus").selectedIndex;
-var quoteContainer = document.getElementById("quote-container");
-var quoteGenerator = document.getElementById("quote-btn");
 
 //chart.js chest tracking chart
 var workoutData = JSON.parse(localStorage.getItem("workoutData")) || {
@@ -93,8 +88,9 @@ function updateCharts(){
     }
 }
 
-$("#form-button").on("click", getUserInput);
+
 //This function pulls the input data from the modal and closes the modal
+$("#form-button").click(getUserInput);
 function getUserInput(event){
     event.preventDefault();
     var bodyPart = $('#body-focus').val();
@@ -118,6 +114,7 @@ function randomNumber(min, max) {
 };
 
 //motivational quote api
+$('#quote-btn').click(quoteApi);
 function quoteApi() {
     fetch("https://type.fit/api/quotes")
     .then((response) => {
@@ -132,5 +129,4 @@ function quoteApi() {
     });
 };
 
-quoteGenerator.addEventListener('click', quoteApi);
 renderCharts();
