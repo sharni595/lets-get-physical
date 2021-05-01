@@ -88,7 +88,6 @@ function renderCharts(){
     });
 };
 
-
 $("#form-button").on("click", getUserInput);
 
 function getUserInput(event){
@@ -98,8 +97,8 @@ function getUserInput(event){
     var weekIndex = parseInt($('#date').val());
     var poundsInput = $('#pounds').val();
 
-    workoutData[bodyPart][weekIndex] = poundsInput;
-        
+    workoutData[bodyPart][weekIndex] = Math.abs(poundsInput);
+    
     localStorage.setItem("workoutData", JSON.stringify(workoutData));
     renderCharts();
     $('#pounds').val("");
