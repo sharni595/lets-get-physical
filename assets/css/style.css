@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
     max-height:80vh;
-    width: 33%;
+    width: 60%;
     transform: translateY(-100vh);
     transition: transform .5s;
 }
@@ -85,7 +85,7 @@ p {
 }
 
 #nutrition-container {
-    display: block;
+    display: inline-block;
     width: 100%;
     background-color: #24DAC5;
 }
@@ -101,4 +101,12 @@ p {
   font-style: normal;
 }
 
-
+@media screen and (min-width: 750px){
+    .modal-body{
+        width: 33%;
+    }
+    #nutrition-container{
+        width: 95%;
+        margin: 7px;
+    }
+}

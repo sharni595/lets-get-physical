@@ -1,6 +1,6 @@
 $('.modal-body') //Need to add a standard element for every modal's body at the top for the exit button
     .prepend('<button class="modal-exit"></button>')
-    .find('button')
+    .find('button').first()
         .click((e)=>{ //assigning the onclick for the exit button
             $(e.target).closest('.modal').removeClass('modal-active');
 });

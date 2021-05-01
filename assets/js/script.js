@@ -66,12 +66,12 @@ function renderCharts(){
                     label: "Weight Lifted",
                     data: workoutData[bodyPart],
                     backgroundColor: [
-                        "#ffe66d",
-                        "#ff6b6b",
-                        "#4ecdc4",
-                        "#577590",
-                        "#cbc0d3",
-                        "#ffbf69"
+                        "#300052",
+                        "#5f00a3",
+                        "#b247ff",
+                        "#bfa3ed",
+                        "#e7c6ff",
+                        "#f6ebff"
                     ]
                 }]
             },
@@ -87,6 +87,7 @@ $("#form-button").on("click", getUserInput);
 
 function getUserInput(event){
     event.preventDefault();
+    $('#input-modal').removeClass('modal-active');
     var bodyPart = $('#body-focus').val();
     var weekIndex = parseInt($('#date').val());
     var poundsInput = $('#pounds').val();
