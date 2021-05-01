@@ -43,7 +43,7 @@ function nutritionApi(food){
         })
     
 }
-
+//This function deletes all chart canvases and then renders new ones with values from chartsObj
 function renderCharts(){
     $(`.chart-target`).empty().append(`<canvas width="400" height="400"></canvas>`);
     $(`.chart-target`).each((index,element)=>{
@@ -83,7 +83,8 @@ function renderCharts(){
     });
 };
 
-function updateCharts(){ //Dynamic updating by object modification so don't need to rerender all charts
+//Dynamic updating by object modification so don't need to rerender all charts
+function updateCharts(){
     for(let [key,chart] of Object.entries(chartsObj)){
         for(let i = 0; i < 6; i++){
             chart.data.datasets[0].data[i] = workoutData[key][i];
@@ -93,10 +94,9 @@ function updateCharts(){ //Dynamic updating by object modification so don't need
 }
 
 $("#form-button").on("click", getUserInput);
-
+//This function pulls the input data from the modal and closes the modal
 function getUserInput(event){
     event.preventDefault();
-    $('#input-modal').removeClass('modal-active');
     var bodyPart = $('#body-focus').val();
     var weekIndex = parseInt($('#date').val());
     var poundsInput = $('#pounds').val();
@@ -105,33 +105,31 @@ function getUserInput(event){
     
     localStorage.setItem("workoutData", JSON.stringify(workoutData));
     updateCharts();
+    $('#input-modal').removeClass('modal-active');
     $('#pounds').val("");
 
 }
 
 //random number generator
-var randomNumber =
-function(min, max) {
+function randomNumber(min, max) {
     var value = 
     Math.floor(Math.random() * (max - min + 1) + min);
     return value;
 };
 
 //motivational quote api
-var quoteApi = function() {
+function quoteApi() {
     fetch("https://type.fit/api/quotes")
-  .then(function(response) {
-    return response.json();
-  })
-
-  .then(function(data) {
-
-    //randomly choose quote to display
-    var value = randomNumber(0, 99);
-    var chosenQuote = data[value].text;
-    var quoteText = document.getElementById("quote-text");
-    quoteText.textContent = chosenQuote;
-});
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        //randomly choose quote to display
+        var value = randomNumber(0, 99);
+        var chosenQuote = data[value].text;
+        var quoteText = document.getElementById("quote-text");
+        quoteText.textContent = chosenQuote;
+    });
 };
 
 quoteGenerator.addEventListener('click', quoteApi);
