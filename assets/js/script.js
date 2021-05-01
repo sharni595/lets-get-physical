@@ -24,18 +24,20 @@ var chartsObj = {
 }
 
 //nutrition api set up
-function nutritionApi(food){
-    var apiUrl = "https://api.edamam.com/api/food-database/v2/parser?app_id=f6bcb10b&app_key=f433e474ba7ce9d3e2329315b7ff8586&ingr=" + food;
+$('#nutrition-search').click(nutritionApi);
+function nutritionApi(){
+    if(!$('#nutrition-input').val()) return;
+    var apiUrl = "https://api.edamam.com/api/food-database/v2/parser?app_id=f6bcb10b&app_key=f433e474ba7ce9d3e2329315b7ff8586&ingr=" + $('#nutrition-input').val();
     
     fetch(apiUrl, {method: "GET"})
-        .then(function(response){
-            return response.json();
-        }).then(function(data){
+        .then(response => response.json())
+        .then(data => {
             calories.textContent = data.hints[0].food.nutrients.ENERC_KCAL.toFixed(0);
             protein.textContent = data.hints[0].food.nutrients.PROCNT.toFixed(2);
             carbs.textContent =  data.hints[0].food.nutrients.CHOCDF.toFixed(2);
-            fat.textContent = data.hints[0].food.nutrients.FAT.toFixed(2);
-        })
+            $('#fat').text(data.hints[0].food.nutrients.FAT.toFixed(2))
+            //fat.textContent = data.hints[0].food.nutrients.FAT.toFixed(2);
+        });
     
 }
 //This function deletes all chart canvases and then renders new ones with values from chartsObj
@@ -70,8 +72,7 @@ function renderCharts(){
                 plugins: {
                     legend: {
                         display: false,
-                }
-                
+                    }
                 }
             }
         });
@@ -87,7 +88,6 @@ function updateCharts(){
         chart.update();
     }
 }
-
 
 //This function pulls the input data from the modal and closes the modal
 $("#form-button").click(getUserInput);
@@ -106,27 +106,22 @@ function getUserInput(event){
 
 }
 
-//random number generator
-function randomNumber(min, max) {
-    var value = 
-    Math.floor(Math.random() * (max - min + 1) + min);
-    return value;
-};
-
 //motivational quote api
 $('#quote-btn').click(quoteApi);
 function quoteApi() {
     fetch("https://type.fit/api/quotes")
-    .then((response) => {
-        return response.json();
-    })
-    .then((data) => {
-        //randomly choose quote to display
-        var value = randomNumber(0, 99);
-        var chosenQuote = data[value].text;
-        var quoteText = document.getElementById("quote-text");
-        quoteText.textContent = chosenQuote;
+        .then(response => response.json())
+        .then(data => {
+            //randomly choose quote to display
+            var value = randomNumber(0, 99);
+            var chosenQuote = data[value].text;
+            var quoteText = document.getElementById("quote-text");
+            quoteText.textContent = chosenQuote;
     });
 };
 
+//random number generator
+var randomNumber = (min,max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+//Call run on start functions
 renderCharts();
