@@ -6,6 +6,8 @@ var fat = document.getElementById("fat");
 var nutritionInput = document.getElementById("nutrition-input");
 var nutritionSearch = document.getElementById("nutrition-search");
 var bodyFocus = document.getElementById("body-focus").selectedIndex;
+var quoteContainer = document.getElementById("quote-container");
+var quoteGenerator = document.getElementById("quote-btn");
 
 //chart.js chest tracking chart
 var workoutData = JSON.parse(localStorage.getItem("workoutData")) || {
@@ -96,13 +98,33 @@ function getUserInput(event){
 
 }
 
+//random number generator
+var randomNumber =
+function(min, max) {
+    var value = 
+    Math.floor(Math.random() * (max - min + 1) + min);
+    return value;
+};
+
 //motivational quote api
-fetch("https://type.fit/api/quotes")
+var quoteApi = function() {
+    fetch("https://type.fit/api/quotes")
   .then(function(response) {
     return response.json();
   })
-  .then(function(data) {
-    console.log(data);
-  });
 
+  .then(function(data) {
+    console.log(data)
+
+    //randomly choose quote to display
+    console.log("hello");
+    var value = randomNumber(0, 99);
+    console.log(data[value].text);
+    var chosenQuote = data[value].text;
+    var quoteText = document.getElementById("quote-text");
+    quoteText.textContent = chosenQuote;
+});
+};
+
+quoteGenerator.addEventListener('click', quoteApi);
 renderCharts();
