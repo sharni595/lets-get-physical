@@ -34,12 +34,7 @@ function nutritionApi(food){
         .then(function(response){
             return response.json();
         }).then(function(data){
-            console.log(data);
-            console.log(data.hints[0].food.nutrients.ENERC_KCAL);
-            console.log(data.hints[0].food.nutrients.PROCNT)
-            console.log(data.hints[0].food.nutrients.CHOCDF);
-            console.log(data.hints[0].food.nutrients.FAT);
-            calories.textContent = data.hints[0].food.nutrients.ENERC_KCAL.toFixed(2);
+            calories.textContent = data.hints[0].food.nutrients.ENERC_KCAL.toFixed(0);
             protein.textContent = data.hints[0].food.nutrients.PROCNT.toFixed(2);
             carbs.textContent =  data.hints[0].food.nutrients.CHOCDF.toFixed(2);
             fat.textContent = data.hints[0].food.nutrients.FAT.toFixed(2);
@@ -66,12 +61,12 @@ function renderCharts(){
                     label: "Weight Lifted",
                     data: workoutData[bodyPart],
                     backgroundColor: [
-                        "#ffe66d",
-                        "#ff6b6b",
-                        "#4ecdc4",
-                        "#577590",
-                        "#cbc0d3",
-                        "#ffbf69"
+                        "#300052",
+                        "#5f00a3",
+                        "#b247ff",
+                        "#bfa3ed",
+                        "#e7c6ff",
+                        "#f6ebff"
                     ]
                 }]
             },
@@ -83,18 +78,22 @@ function renderCharts(){
     });
 };
 
+
 $("#form-button").on("click", getUserInput);
 
 function getUserInput(event){
     event.preventDefault();
+    $('#input-modal').removeClass('modal-active');
     var bodyPart = $('#body-focus').val();
     var weekIndex = parseInt($('#date').val());
     var poundsInput = $('#pounds').val();
 
     workoutData[bodyPart][weekIndex] = poundsInput;
-    
+        
     localStorage.setItem("workoutData", JSON.stringify(workoutData));
     renderCharts();
+    $('#pounds').val("");
+
 }
 
 renderCharts();
