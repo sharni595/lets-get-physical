@@ -41,13 +41,22 @@
 }
 
 nav {
-    background: rgb(172,62,255);
-    background: linear-gradient(45deg, rgba(172,62,255,1) 0%, rgba(128,0,255,1) 100%);
+    background: rgba(255, 230, 0, 0);
 }   
 
 #main-wrapper {
-    background: #f7f7f78c;
+    background: #f9f9f9;
+    border-radius: 1.5rem;
+         
 }
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 
 h1 {
     font-family: indie-flower,sans-serif;
@@ -58,10 +67,17 @@ h1 {
 
 h3 {
     font-family: acumin-pro, sans-serif;;
-    font-weight: 700;
+    font-weight: 400;
     font-style: normal;
     font-size: larger;
-    padding: 0 0 10 0px
+    padding: 5 0 1 0px
+}
+
+hr {
+    padding: 5 0 25 0px;
+    width:50%;
+    text-align:left;
+    margin-left:0"
 }
 
 p {
@@ -73,8 +89,8 @@ p {
 #add-new {
   display: block;
   width: 100%;
-  border: none;
-  /* background-color: #24DAC5; */
+  border-width: 2px;
+  border-color: white;
   padding: 10px 28px;
   cursor: pointer;
   text-align: center;
@@ -84,14 +100,18 @@ p {
 }
 
 #add-new:hover{
-    background-color:  #2a9d8f;
+    background: rgba(255, 230, 0, 0.612);
+    background: linear-gradient(45deg,rgba(0,216,255,1) 48%, rgba(166, 0, 255, 0.742) 100%);
+    border: none;
     color: white;
 }
 
 #nutrition-container {
     display: inline-block;
     width: 100%;
-    /* background-color: #24DAC5; */
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(10px);
+    
 }
 
 #nutrition-search {
@@ -110,6 +130,14 @@ p {
  color: white;
 }
 
+main {
+    background: linear-gradient(45deg, rgba(0,216,255,1) 48%, rgba(167,0,255,1) 100%);
+}
+
+img {
+    max-width: 50px;
+}
+
 @media screen and (min-width: 750px){
     .modal-body{
         width: 33%;
@@ -118,4 +146,21 @@ p {
         width: 95%;
         margin: 7px;
     }
+
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #main-wrapper {
+        background: #f9f9f9;
+        border-radius: 1rem;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .card {
+        flex: 0 0 auto;
+        max-width: 300px;
+      }
+  }

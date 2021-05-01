@@ -43,9 +43,9 @@ function nutritionApi(food){
 }
 
 
-nutritionSearch.addEventListener("click", function(){
-    nutritionApi(nutritionInput.value);
-});
+// nutritionSearch.addEventListener("click", function(){
+//     nutritionApi(nutritionInput.value);
+// });
 
 function renderCharts(){
     $(`.chart-target`).empty().append(`<canvas width="400" height="400"></canvas>`);
@@ -61,18 +61,26 @@ function renderCharts(){
                     label: "Weight Lifted",
                     data: workoutData[bodyPart],
                     backgroundColor: [
-                        "#300052",
-                        "#5f00a3",
-                        "#b247ff",
-                        "#bfa3ed",
-                        "#e7c6ff",
-                        "#f6ebff"
+                        "#9D5096",
+                        "#EA963F",
+                        "#F1E84C",
+                        "#5EB057",
+                        "#DA418E",
+                        "#3CBCEE"
                     ]
+                
                 }]
+            
             },
             options:{
                 height: 300, 
-                width: 300
+                width: 300,
+                plugins: {
+                    legend: {
+                        display: false,
+                }
+                
+                }
             }
         });
     });
