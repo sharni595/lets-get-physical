@@ -25,19 +25,25 @@
                 </div>    
                 <!--  -->
                 <!-- nutrition info search-->
+
                 <div id="nutrition-container" class="text-center p-6 my-5 md:rounded-lg">
-                     
                      <div class="justify-center">
-                     <input id="nutrition-input" class=" shadow-inner rounded-md p-1" id="food-input" placeholder="Nutrition Check"/>
-                     <button id="nutrition-search" class="p-1 m-3 bg-green-300 rounded-md hover:bg-green-400">Search</button>
+                         <input id="nutrition-input" class=" shadow-inner rounded-md p-1" id="food-input" placeholder="Nutrition Check"/>
+                         <button id="nutrition-search" class="p-1 m-3 bg-green-300 rounded-md hover:bg-green-400">Search</button>
+                     </div>
+                     <div class="text-green-900 grid grid-cols-2">
+                        <div><p>Calories: <span id="calories"></span></p></div>
+                        <div><p>Protein: <span id="protein"></span></p></div>
+                        <div><p>Carbs: <span id="carbs"></span></p></div>
+                        <div><p>Fat: <span id="fat"></span></p></div>
+                     </div>
                 </div>
-                <div class="text-green-900 grid grid-cols-2">
-                    <div><p>Calories: <span id="calories"></span></p></div>
-                    <div><p>Protein: <span id="protein"></span></p></div>
-                    <div><p>Carbs: <span id="carbs"></span></p></div>
-                    <div><p>Fat: <span id="fat"></span></p></div>
+           <!--randomly generated motivational quote-->
+                <div id="quote-container" class="italic text-center">
+                    <button id="quote-btn" class="quote-btn m-3 shadow text-center rounded-lg bg-green-200 p-3 w-3/4">Let's Get Motivated</button>
+                    <p id="quote-text" class="quote-txt p-2 mb-3 text-white"></p>
                 </div>
-</div>
+
             </nav>
         </div>
 <!--END left hand menu desktop/top menu mobile-->
@@ -110,10 +116,12 @@
     </div>
 </footer>
     </main>
+
+<!--Modal-->
     <div class='modal' id='input-modal'>
-        <div class="modal-body color bg-blue-200 rounded font-bold py-2 px-4">
+        <div class="modal-body color bg-green-200 rounded-xl font-bold py-2 px-4">
             <div>Week: 
-                <select id="date">
+                <select id="date" class="rounded-md p-1">
                     <option value="0">Week 1</option>
                     <option value="1">Week 2</option>
                     <option value="2">Week 3</option>
@@ -122,8 +130,8 @@
                     <option value="5">Week 6</option>
                 </select>
             </div>
-            <div>Type of Exercise:
-                <select id="body-focus">
+            <div class="my-2">Type of Exercise:
+                <select id="body-focus" class="rounded-md p-1">
                     <option value="chest">Chest</option>
                     <option value="arms">Arms</option>
                     <option value="shoulders">Shoulders</option>
@@ -133,9 +141,9 @@
                 </select>
             </div>
             <div>
-                Weight lifted: <input id="pounds" type="number"/>lbs
+                Weight lifted: <input id="pounds" type="number" class="rounded-md p-1 mb-1 mr-1 w-14"/>lbs
             </div>
-            <button class="color bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded" id="form-button">Submit</button>
+            <button class="color bg-purple-500 hover:bg-purple-400 text-white font-bold py-2 px-4 rounded m-2 justify-center" id="form-button">Submit</button>
         </div>
     </div>
 
