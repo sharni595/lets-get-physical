@@ -21,18 +21,18 @@
 
                 <!--Nav Bar-->
                 <div class="flex flex-wrap justify-center w-3/4 mx-auto pb-6">
-                        <button type="button" id="add-new" class="shadow text-center rounded-lg" onClick="openModal('input-modal')">+ New Workout</button>
+                        <button type="button" id="add-new" class="shadow text-center rounded-lg bg-green-200" onClick="openModal('input-modal')">+ New Workout</button>
                 </div>    
                 <!--  -->
                 
                 <!-- nutrition info search-->
                     <div id="nutrition-container" class="bg-green-200 text-center pb-6 md:rounded-lg">
-                        <h3 class="font-bold text-lg py-3 pb-1">Nutrition Information</h3>
+                        <h3 class="font-bold text-lg py-3 pb-1 text-green-900">Nutrition Information</h3>
                             <div class="justify-center">
                                 <input id="nutrition-input" class=" shadow-inner rounded-md p-1" id="food-input" placeholder="Search Food"/>
                                 <button id="nutrition-search" class="p-1 m-3 bg-green-300 rounded-md hover:bg-green-400">Search</button>
                             </div>
-                        <div>
+                        <div class="text-green-900">
                             <p>Calories: <span id="calories"></span></p>
                             <p>Protein: <span id="protein"></span>g</p>
                             <p>Carbs: <span id="carbs"></span>g</p>
@@ -48,27 +48,27 @@
 
         <div id="main-wrapper" class=" md:w-3/4 grid auto-rows-max  lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-6 p-8 ">
           <div class=" rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
-              <h3>Chest</h3>
+              <h3 class="text-center">Chest</h3>
               <div class='chart-target' id="dynamic-chart-chest"></div>
           </div>
           <div class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
-              <h3>Arms</h3>
+              <h3 class="text-center">Arms</h3>
               <div class='chart-target' id="dynamic-chart-arms"></div>
           </div>
           <div class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
-              <h3>Shoulders</h3>
+              <h3 class="text-center">Shoulders</h3>
               <div class='chart-target' id="dynamic-chart-shoulders"></div>
           </div>
           <div class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
-              <h3>Back</h3>
+              <h3 class="text-center">Back</h3>
               <div class='chart-target' id="dynamic-chart-back"></div>
           </div>
           <div class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
-              <h3>Legs</h3>
+              <h3 class="text-center">Legs</h3>
               <div class='chart-target' id="dynamic-chart-legs"></div>
           </div>
           <div class="rounded-lg shadow color bg-white p-10 md:p-6 sm:p-2">
-              <h3>Abs</h3>
+              <h3 class="text-center">Abs</h3>
               <div class='chart-target' id="dynamic-chart-abs"></div>
           </div>
         </div>

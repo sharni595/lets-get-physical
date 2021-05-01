@@ -74,20 +74,24 @@ p {
   display: block;
   width: 100%;
   border: none;
-  background-color: #24DAC5;
+  /* background-color: #24DAC5; */
   padding: 10px 28px;
   cursor: pointer;
   text-align: center;
   font-family: quicksand,sans-serif;
   font-weight: 300;
   font-style: normal;
-    
+}
+
+#add-new:hover{
+    background-color:  #2a9d8f;
+    color: white;
 }
 
 #nutrition-container {
     display: inline-block;
     width: 100%;
-    background-color: #24DAC5;
+    /* background-color: #24DAC5; */
 }
 
 #nutrition-search {
@@ -99,6 +103,11 @@ p {
   font-family: acumin-pro, sans-serif;
   font-weight: 300;
   font-style: normal;
+}
+
+#nutrition-search:hover{
+ background-color: #2a9d8f;
+ color: white;
 }
 
 @media screen and (min-width: 750px){
