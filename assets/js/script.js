@@ -114,12 +114,9 @@ var quoteApi = function() {
   })
 
   .then(function(data) {
-    console.log(data)
 
     //randomly choose quote to display
-    console.log("hello");
     var value = randomNumber(0, 99);
-    console.log(data[value].text);
     var chosenQuote = data[value].text;
     var quoteText = document.getElementById("quote-text");
     quoteText.textContent = chosenQuote;

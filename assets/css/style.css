@@ -29,7 +29,7 @@
     right:calc(-100% + 1em);
     width: 1.5em;
     height: 1.5em;
-    background-color:red;
+    background-color:rgb(219, 21, 14);
     border-radius: .25rem;
     border:black;
 }
