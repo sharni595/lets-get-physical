@@ -18,8 +18,8 @@ var workoutData = JSON.parse(localStorage.getItem("workoutData")) || {
     legs: [0,0,0,0,0,0],
     abs: [0,0,0,0,0,0]
 }
-//Basically useless but might be useful later
-var chartArray = {
+//Allows for dynamic updating of charts without need for a full rerender
+var chartsObj = {
     chest: {},
     arms: {},
     shoulders: {},
@@ -44,18 +44,13 @@ function nutritionApi(food){
     
 }
 
-
-// nutritionSearch.addEventListener("click", function(){
-//     nutritionApi(nutritionInput.value);
-// });
-
 function renderCharts(){
     $(`.chart-target`).empty().append(`<canvas width="400" height="400"></canvas>`);
     $(`.chart-target`).each((index,element)=>{
         var canvas = $(element).find('canvas')[0];
         var id = element.id;
         var bodyPart = id.substring(14);
-        chartArray[bodyPart] = new Chart(canvas, {
+        chartsObj[bodyPart] = new Chart(canvas, {
             type: "polarArea",
             data:{
                 labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6"],
@@ -88,6 +83,15 @@ function renderCharts(){
     });
 };
 
+function updateCharts(){ //Dynamic updating by object modification so don't need to rerender all charts
+    for(let [key,chart] of Object.entries(chartsObj)){
+        for(let i = 0; i < 6; i++){
+            chart.data.datasets[0].data[i] = workoutData[key][i];
+        }
+        chart.update();
+    }
+}
+
 $("#form-button").on("click", getUserInput);
 
 function getUserInput(event){
@@ -100,7 +104,7 @@ function getUserInput(event){
     workoutData[bodyPart][weekIndex] = Math.abs(poundsInput);
     
     localStorage.setItem("workoutData", JSON.stringify(workoutData));
-    renderCharts();
+    updateCharts();
     $('#pounds').val("");
 
 }
