@@ -70,6 +70,16 @@ p {
     font-style: normal;
 }
 
+.quote-btn {
+    font-family: quicksand, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.quote-txt {
+    font-family: indie-flower,sans-serif;
+}
+
 #add-new {
   display: block;
   width: 100%;
