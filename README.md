@@ -1,3 +1,4 @@
+
 ## Let's Get Physical
 
 Let's Get Physical is a weight training application that tracks a user's progress of their increase in pounds lifted over six weeks. 
@@ -8,8 +9,19 @@ As a user I want to be able to track my weight lifting progress over the course 
 
 [Link To Deployed App](https://sharni595.github.io/lets-get-physical/)
 
-## Image of App
-![image](https://user-images.githubusercontent.com/68579829/116801237-19057780-aac5-11eb-9c3c-bfa50cd7c73c.png)
+## Images of App
+
+**Destop**
+<img width="600" alt="Screen Shot 2021-05-02 at 3 18 19 PM" src="https://user-images.githubusercontent.com/33267456/116828133-0ab56b00-ab5a-11eb-81e5-9357f457c2ff.png">
+
+**iPhone**
+<img width="313" alt="Screen Shot 2021-05-02 at 3 19 04 PM" src="https://user-images.githubusercontent.com/33267456/116828170-3b95a000-ab5a-11eb-9f6b-5d5362551168.png">
+
+**Modal**
+<img width="316" alt="Screen Shot 2021-05-02 at 3 19 31 PM" src="https://user-images.githubusercontent.com/33267456/116828178-4a7c5280-ab5a-11eb-8a3e-f707ccd18d64.png">
+
+**Nutrition Section**
+<img width="315" alt="Screen Shot 2021-05-02 at 3 19 51 PM" src="https://user-images.githubusercontent.com/33267456/116828188-5a943200-ab5a-11eb-8f7c-055c7dcf25f0.png">
 
 
 ## Usage
