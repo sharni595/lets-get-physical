@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .modal {
     visibility: hidden;
     position:fixed;
@@ -144,7 +148,7 @@ main {
     background: linear-gradient(45deg, rgba(0,216,255,1) 48%, rgba(167,0,255,1) 100%);
 }
 
-img {
+.centered>img {
     max-width: 50px;
 }
 
