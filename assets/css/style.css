@@ -79,15 +79,15 @@ p {
     right:calc(-100% + 1em);
     width: 1.5em;
     height: 1.5em;
+    background-color: #bff5ff;
     border-radius: .25rem;
     border:black;
 }
-
 .modal-exit::before{
     height:100%;
     display:block;
     content: ' ';
-    background-image: url('/assets/svg/close-icon.svg');
+    background-image: url('../svg/close-icon.svg');
 }
 
 /* Cards */
@@ -98,8 +98,8 @@ img {
 
 #main-wrapper {
     background: #f9f9f9;
-    border-radius: 1.5rem;
-         
+    border-radius: 1rem;
+    overflow-x:auto;
 }
 
 .centered {
@@ -130,11 +130,11 @@ img {
   font-weight: 300;
   font-style: normal;
 }
-
 #add-new:hover{
     background: rgba(255, 230, 0, 0.612);
     background: linear-gradient(45deg,rgba(0,216,255,1) 48%, rgba(166, 0, 255, 0.742) 100%);
     border: none;
+    margin: 2px;
     color: white;
 }
 
@@ -156,33 +156,20 @@ img {
     font-weight: 300;
     font-style: normal;
 }
-
 #nutrition-search:hover{
     background: rgba(255, 230, 0, 0.612);
     background: linear-gradient(45deg,rgba(0,216,255,1) 48%, rgba(166, 0, 255, 0.742) 100%);
     border: none;
+    margin: calc(2px + .25rem) !important;
     color: white;
 }
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    #main-wrapper {
-        background: #f9f9f9;
-        border-radius: 1rem;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-
-    .card {
-        flex: 0 0 auto;
-        max-width: 300px;
-      }
-  }
 @media only screen and (min-width: 768px) {
     /* Desktop Overrides: */
     .modal-body{
         width: 33%;
+    }
+    #main-wrapper{
+        overflow-x: initial;
     }
     canvas {
         max-height: calc(50vh - 6.5rem - 116.64px) !important;
