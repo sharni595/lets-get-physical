@@ -25,9 +25,9 @@ function nutritionApi(){
     fetch(apiUrl, {method: "GET"})
         .then(response => response.json())
         .then(data => {
-            $('#calories').textContent = data.hints[0].food.nutrients.ENERC_KCAL.toFixed(0);
-            $('#protein').textContent = data.hints[0].food.nutrients.PROCNT.toFixed(2);
-            $('#carbs').textContent =  data.hints[0].food.nutrients.CHOCDF.toFixed(2);
+            $('#calories').text(data.hints[0].food.nutrients.ENERC_KCAL.toFixed(0));
+            $('#protein').text(data.hints[0].food.nutrients.PROCNT.toFixed(2));
+            $('#carbs').text(data.hints[0].food.nutrients.CHOCDF.toFixed(2));
             $('#fat').text(data.hints[0].food.nutrients.FAT.toFixed(2));
     });
 }
