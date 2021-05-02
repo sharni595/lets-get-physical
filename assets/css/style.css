@@ -152,9 +152,7 @@ main {
     max-width: 50px;
 }
 
-canvas {
-    max-height: calc(50vh - 6.75em - 116.64px) !important;
-}
+
 
 
 #nutrition-container{
@@ -178,5 +176,8 @@ canvas {
     /* Desktop Overrides: */
     .modal-body{
         width: 33%;
+    }
+    canvas {
+        max-height: calc(50vh - 6.75em - 116.64px) !important;
     }
   }
