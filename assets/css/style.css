@@ -37,7 +37,7 @@
     height:100%;
     display:block;
     content: ' ';
-    background-image: url('/assets/svg/close-icon.svg');
+    background-image: url('../svg/close-icon.svg');
 }
 
 nav {
