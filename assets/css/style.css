@@ -1,28 +1,26 @@
-/*Generic Overrides*/
-* {
-    box-sizing: border-box;
-}
-
-/*Semantics*/
+/* Semantics */
 nav {
     background: rgba(255, 230, 0, 0);
-}
+} 
+
 main {
     background: linear-gradient(45deg, rgba(0,216,255,1) 48%, rgba(167,0,255,1) 100%);
 }
 
-/*Canvas responsiveness fix*/
+/* Canvas Responsiveness Fix* */
 canvas {
-    width: calc(50vw - 2rem - 1.5rem/2 - 2*2rem) !important;
+    width: calc(70vw - 2rem - 1.5rem/2 - 2*2rem) !important;
 }
 
-/*General Element Styling*/
+/* General Styling */
+
 h1 {
     font-family: indie-flower,sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 30px;
 }
+
 h3 {
     font-family: acumin-pro, sans-serif;;
     font-weight: 400;
@@ -30,88 +28,127 @@ h3 {
     font-size: larger;
     padding: 5 0 1 0px
 }
+
 hr {
     padding: 5 0 25 0px;
     width:50%;
     text-align:left;
     margin-left:0"
 }
+
 p {
     font-family: acumin-pro, sans-serif;;
     font-weight: 300;
     font-style: normal;
 }
 
-/*Modals*/
+/* Modals */
 .modal {
     visibility: hidden;
     position:fixed;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(157, 157, 157, 0.529);
     top:0%;
     left:0%;
     height:100%;
     width:100%;
     z-index:100;
 }
+
 .modal-body {
+    background: rgba(0,216,255,1);
     margin:auto;
     margin-top: 10vh;
     align-items: center;
     justify-content: center;
     max-height:80vh;
-    width: 60%;
     transform: translateY(-100vh);
     transition: transform .5s;
+    
 }
+
 .modal-active {
     visibility: visible;
 }
+
 .modal-active .modal-body{
     transform: translateY(0);
 }
+
 .modal-exit {
     position:relative;
-    right:calc(-100% + 1rem);
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color:rgb(219, 21, 14);
+    right:calc(-100% + 1em);
+    width: 1.5em;
+    height: 1.5em;
     border-radius: .25rem;
     border:black;
 }
+
 .modal-exit::before{
     height:100%;
     display:block;
     content: ' ';
-    background-image: url('../svg/close-icon.svg');
+    background-image: url('/assets/svg/close-icon.svg');
 }
-/*Cards*/
-.card {
-    flex: 0 0 auto;
+
+/* Cards */
+
+img {
+    max-width: 50px;
 }
-.card-head {
+
+#main-wrapper {
+    background: #f9f9f9;
+    border-radius: 1.5rem;
+         
+}
+
+.centered {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.card-head>img {
-    max-width: 50px;
-}
-/*Motivational Quote Box*/
-.quote-btn {
-    font-family: quicksand, sans-serif;
-    font-weight: 300;
-    font-style: normal;
-}
+
+
+/* ID Targets */
+
 .quote-txt {
     font-family: indie-flower,sans-serif;
+    font-size: 20px;
+    font-weight: 500;
 }
 
-/*ID-targeted*/
 #add-new {
-    display: block;
+  display: block;
+  width: 100%;
+  border-width: 2px;
+  border-color: white;
+  padding: 10px 28px;
+  cursor: pointer;
+  text-align: center;
+  font-family: quicksand,sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+#add-new:hover{
+    background: rgba(255, 230, 0, 0.612);
+    background: linear-gradient(45deg,rgba(0,216,255,1) 48%, rgba(166, 0, 255, 0.742) 100%);
+    border: none;
+    color: white;
+}
+
+#nutrition-container {
+    display: inline-block;
     width: 100%;
-    outline: 2px solid white;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(10px);
+    
+}
+
+#nutrition-search {
+    border-width: 2px;
+    border-color: white;
     padding: 10px 28px;
     cursor: pointer;
     text-align: center;
@@ -119,36 +156,29 @@ p {
     font-weight: 300;
     font-style: normal;
 }
-#add-new:hover{
+
+#nutrition-search:hover{
     background: rgba(255, 230, 0, 0.612);
     background: linear-gradient(45deg,rgba(0,216,255,1) 48%, rgba(166, 0, 255, 0.742) 100%);
-    outline:none;
+    border: none;
     color: white;
 }
-#main-wrapper {
-    background: #f9f9f9;
-    border-radius: 1rem;
-    overflow-x: auto;
-}
-#nutrition-container {
-    display: inline-block;
-    background-color: rgba(255, 255, 255, .15);  
-    backdrop-filter: blur(10px);
-}
-#nutrition-search {
-  border: none;
-  background-color: #f2f2f2;
-  padding: 10px 28px;
-  cursor: pointer;
-  text-align: center;
-  font-family: acumin-pro, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-#nutrition-search:hover{
- background-color: #2a9d8f;
- color: white;
-}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #main-wrapper {
+        background: #f9f9f9;
+        border-radius: 1rem;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .card {
+        flex: 0 0 auto;
+        max-width: 300px;
+      }
+  }
 @media only screen and (min-width: 768px) {
     /* Desktop Overrides: */
     .modal-body{

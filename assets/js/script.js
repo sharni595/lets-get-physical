@@ -98,7 +98,7 @@ function getUserInput(event){
 }
 
 //motivational quote api
-$('#quote-btn').click(quoteApi);
+$('#add-new').click(quoteApi);
 function quoteApi() {
     fetch("https://type.fit/api/quotes")
         .then(response => response.json())
