@@ -152,29 +152,31 @@ main {
     max-width: 50px;
 }
 
-@media screen and (min-width: 750px){
+canvas {
+    max-height: calc(50vh - 6.75em - 116.64px) !important;
+}
+
+
+#nutrition-container{
+    width: 95%;
+    margin: 7px;
+}
+
+#main-wrapper {
+    background: #f9f9f9;
+    border-radius: 1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.card {
+    flex: 0 0 auto;
+    max-width: 300px;
+}
+
+@media only screen and (min-width: 768px) {
+    /* Desktop Overrides: */
     .modal-body{
         width: 33%;
     }
-    #nutrition-container{
-        width: 95%;
-        margin: 7px;
-    }
-
-}
-
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    #main-wrapper {
-        background: #f9f9f9;
-        border-radius: 1rem;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-
-    .card {
-        flex: 0 0 auto;
-        max-width: 300px;
-      }
   }
