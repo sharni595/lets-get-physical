@@ -5,11 +5,7 @@ nav {
 
 main {
     background: linear-gradient(45deg, rgba(0,216,255,1) 48%, rgba(167,0,255,1) 100%);
-}
-
-/* Canvas Responsiveness Fix* */
-canvas {
-    width: calc(70vw - 2rem - 1.5rem/2 - 2*2rem) !important;
+    min-height: 100vh;
 }
 
 /* General Styling */
@@ -61,6 +57,7 @@ p {
     align-items: center;
     justify-content: center;
     max-height:80vh;
+    width:80%;
     transform: translateY(-100vh);
     transition: transform .5s;
     
@@ -92,7 +89,7 @@ p {
 
 /* Cards */
 
-img {
+.centered img {
     max-width: 50px;
 }
 
@@ -109,15 +106,15 @@ img {
     flex-direction: column;
 }
 
-
 /* ID Targets */
-
-.quote-txt {
+#card-grid {
+    width: 500%;
+}
+#quote-text {
     font-family: indie-flower,sans-serif;
     font-size: 20px;
     font-weight: 500;
 }
-
 #add-new {
   display: block;
   width: 100%;
@@ -137,7 +134,6 @@ img {
     margin: 2px;
     color: white;
 }
-
 #nutrition-container {
     display: inline-block;
     width: 100%;
@@ -145,7 +141,6 @@ img {
     backdrop-filter: blur(10px);
     
 }
-
 #nutrition-search {
     border-width: 2px;
     border-color: white;
@@ -165,6 +160,12 @@ img {
 }
 @media only screen and (min-width: 768px) {
     /* Desktop Overrides: */
+    footer{
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:25vw;
+    }
     .modal-body{
         width: 33%;
     }
@@ -174,6 +175,8 @@ img {
     canvas {
         max-height: calc(50vh - 6.5rem - 116.64px) !important;
         width: calc((75vw - (2*2.5rem + 6*1.5rem + 2*2rem))/3) !important;
-        aspect-ratio: 1 !important;
+    }
+    #card-grid {
+        width: 100%;
     }
 }
