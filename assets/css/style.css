@@ -66,9 +66,9 @@ p {
 }
 .modal-exit {
     position:relative;
-    right:calc(-100% + 1em);
-    width: 1.5em;
-    height: 1.5em;
+    right:calc(-100% + 1rem);
+    width: 1.5rem;
+    height: 1.5rem;
     background-color:rgb(219, 21, 14);
     border-radius: .25rem;
     border:black;
@@ -82,7 +82,6 @@ p {
 /*Cards*/
 .card {
     flex: 0 0 auto;
-    max-width: 300px;
 }
 .card-head {
     display: flex;
@@ -124,13 +123,7 @@ p {
 }
 #main-wrapper {
     background: #f9f9f9;
-    border-radius: 1.5rem;
-         
-}
-#main-wrapper {
-    background: #f9f9f9;
     border-radius: 1rem;
-    flex-wrap: nowrap;
     overflow-x: auto;
 }
 #nutrition-container {
@@ -158,6 +151,8 @@ p {
         width: 33%;
     }
     canvas {
-        max-height: calc(50vh - 6.75em - 116.64px) !important;
+        max-height: calc(50vh - 6.5rem - 116.64px) !important;
+        width: calc((75vw - (2*2.5rem + 6*1.5rem + 2*2rem))/3) !important;
+        aspect-ratio: 1 !important;
     }
-  }
+}
