@@ -17,8 +17,8 @@
 <body>
     <main class="flex flex-wrap flex-row h-screen">
         <!--START left hand menu desktop/top menu mobile-->
-        <div id="wrapper" class="flex flex-wrap flex-row sm:h-1/4 md:h-screen md:w-1/4">
-            <nav class="w-screen content-center">
+        <div id="wrapper" class="flex flex-wrap flex-row w-full md:h-screen md:w-1/4">
+            <nav class="w-full content-center">
                 <h1 class="pt-5 pb-6 text-center text-white">Let's Get Physical</h1>
                 <!--Nav Bar-->
                 <div class="flex flex-wrap justify-center w-3/4 mx-auto pb-6">
@@ -28,7 +28,7 @@
                     </button>
                 </div>
                 <!-- nutrition info search-->
-                <div id="nutrition-container" class="text-center p-6 my-5 md:rounded-lg">
+                <div id="nutrition-container" class="text-center md:p-2 lg:p-6 my-5 w-full md:rounded-lg">
                     <div class="justify-center">
                         <input id="nutrition-input" class="shadow-inner rounded-md p-1" id="food-input"
                             placeholder="Nutrition Check" />
@@ -59,69 +59,68 @@
                     <p id="quote-text" class="quote-txt p-2 mb-3 text-white"></p>
                 </div>
             </nav>
+            <!--Footer-->
+            <footer class='mt-auto'>
+                    <!--Make copyright center inline with edamam center-->
+                <p class="m-3 justify-center">Let's Get Physical 2021</p>
+                <div id="edamam-badge" data-color="dark" class="m-3"></div>
+            </footer>
         </div>
         <!--END left hand menu desktop/top menu mobile-->
         <!-- START right hand chart section -->
-        <div id="main-wrapper"
-            class="md:w-3/4 grid auto-rows-max md:grid-cols-3 grid-cols-2 gap-6 p-8 md:gap-8 md:p-10">
-            <div class="card shadow color bg-white p-8 md:p-6">
-                <div class="centered">
-                    <img src="./assets/svg/Chest.svg" alt="" />
-                    <h3>Chest</h3>
-                    <hr />
+        <div id="main-wrapper" class="p-8 w-full md:w-3/4 md:h-screen md:p-10">
+            <div id='card-grid' class="grid m-auto justify-items-center auto-rows-max grid-cols-2 gap-6 md:gap-8 md:grid-cols-3">
+                <div class="card shadow color bg-white p-8 md:p-6">
+                    <div class="card-head">
+                        <img src="./assets/svg/Chest.svg" alt="" />
+                        <h3>Chest</h3>
+                        <hr />
+                    </div>
+                    <div class="chart-target" id="dynamic-chart-chest"></div>
                 </div>
-                <div class="chart-target" id="dynamic-chart-chest"></div>
-            </div>
-            <div class="card rounded shadow color bg-white p-8 md:p-6">
-                <div class="centered">
-                    <img src="./assets/svg/Arm.svg" alt="" />
-                    <h3>Arms</h3>
-                    <hr />
+                <div class="card rounded shadow color bg-white p-8 md:p-6">
+                    <div class="card-head">
+                        <img src="./assets/svg/Arm.svg" alt="" />
+                        <h3>Arms</h3>
+                        <hr />
+                    </div>
+                    <div class="chart-target" id="dynamic-chart-arms"></div>
                 </div>
-                <div class="chart-target" id="dynamic-chart-arms"></div>
-            </div>
-            <div class="card rounded shadow color bg-white p-8 md:p-6">
-                <div class="centered">
-                    <img src="./assets/svg/Shoulder.svg" alt="" />
-                    <h3>Shoulders</h3>
-                    <hr />
+                <div class="card rounded shadow color bg-white p-8 md:p-6">
+                    <div class="card-head">
+                        <img src="./assets/svg/Shoulder.svg" alt="" />
+                        <h3>Shoulders</h3>
+                        <hr />
+                    </div>
+                    <div class="chart-target" id="dynamic-chart-shoulders"></div>
                 </div>
-                <div class="chart-target" id="dynamic-chart-shoulders"></div>
-            </div>
-            <div class="card rounded shadow color bg-white p-8 md:p-6">
-                <div class="centered">
-                    <img src="./assets/svg/Back.svg" alt="" />
-                    <h3>Back</h3>
-                    <hr />
+                <div class="card rounded shadow color bg-white p-8 md:p-6">
+                    <div class="card-head">
+                        <img src="./assets/svg/Back.svg" alt="" />
+                        <h3>Back</h3>
+                        <hr />
+                    </div>
+                    <div class="chart-target" id="dynamic-chart-back"></div>
                 </div>
-                <div class="chart-target" id="dynamic-chart-back"></div>
-            </div>
-            <div class="card rounded shadow color bg-white p-8 md:p-6">
-                <div class="centered">
-                    <img src="./assets/svg/Leg.svg" alt="" />
-                    <h3>Legs</h3>
-                    <hr />
+                <div class="card rounded shadow color bg-white p-8 md:p-6">
+                    <div class="card-head">
+                        <img src="./assets/svg/Leg.svg" alt="" />
+                        <h3>Legs</h3>
+                        <hr />
+                    </div>
+                    <div class="chart-target" id="dynamic-chart-legs"></div>
                 </div>
-                <div class="chart-target" id="dynamic-chart-legs"></div>
-            </div>
-            <div class="card rounded shadow color bg-white p-8 md:p-6">
-                <div class="centered">
-                    <img src="./assets/svg/Abs.svg" alt="" />
-                    <h3>Abs</h3>
-                    <hr />
+                <div class="card rounded shadow color bg-white p-8 md:p-6">
+                    <div class="card-head">
+                        <img src="./assets/svg/Abs.svg" alt="" />
+                        <h3>Abs</h3>
+                        <hr />
+                    </div>
+                    <div class="chart-target" id="dynamic-chart-abs"></div>
                 </div>
-                <div class="chart-target" id="dynamic-chart-abs"></div>
             </div>
         </div>
         <!-- END right hand chart section -->
-        <!--Footer-->
-        <footer class="flex flex-row">
-            <div>
-                <!--Make copyright center inline with edamam center-->
-                <p class="m-3 justify-center">Let's Get Physical 2021</p>
-            </div>
-            <div id="edamam-badge" data-color="white" class="m-3"></div>
-        </footer>
     </main>
     <!--Modal-->
     <div class="modal" id="input-modal">
