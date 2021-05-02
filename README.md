@@ -2,6 +2,12 @@
 
 Let's Get Physical is a weight training application that tracks a user's progress of their increase in pounds lifted over four weeks. 
 
+[##Link To Deployed App](https://sharni595.github.io/lets-get-physical/)
+
+##Image of App
+![image](https://user-images.githubusercontent.com/68579829/116801237-19057780-aac5-11eb-9c3c-bfa50cd7c73c.png)
+
+
 ## Usage
 
 Users can visit the site and log their workouts through a modal revealed through the '+New Workout' button. Within the modal, users may choose which week they are logging, type of muscle group exercised, and weight in pounds lifted. 
