@@ -11,6 +11,11 @@ main {
     background: linear-gradient(45deg, rgba(0,216,255,1) 48%, rgba(167,0,255,1) 100%);
 }
 
+/*Canvas responsiveness fix*/
+canvas {
+    width: calc(50vw - 2rem - 1.5rem/2 - 2*2rem) !important;
+}
+
 /*General Element Styling*/
 h1 {
     font-family: indie-flower,sans-serif;
